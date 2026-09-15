@@ -14,12 +14,25 @@
   <title>GPAC26 PUBLICITY PORTAL</title>
   <meta name="description" content="GPAC26 PUBLICITY PORTAL for Ghana Psychological Association 2026 conference publicity materials.">
   <style>
-    html, body, iframe { width: 100%; height: 100%; margin: 0; border: 0; }
+    html, body, iframe { width: 100%; height: 100%; margin: 0; border: 0; padding: 0; }
     body { overflow: hidden; background: #f7f8f6; }
-    iframe { display: block; }
+    iframe { display: block; border: none; width: 100vw; height: 100vh; }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbze042bgfxsbzZostLY-TUf5R5FUa2KRdpPDIKI98blhmzcKDi7rdeMOR9pKN8Z2W1vdg/exec" title="GPAC26 PUBLICITY PORTAL"></iframe>
+  <iframe id="appFrame" src="https://script.google.com/macros/s/AKfycbze042bgfxsbzZostLY-TUf5R5FUa2KRdpPDIKI98blhmzcKDi7rdeMOR9pKN8Z2W1vdg/exec" title="GPAC26 PUBLICITY PORTAL"></iframe>
+  <script>
+    (function() {
+      var frame = document.getElementById('appFrame');
+      var baseUrl = "https://script.google.com/macros/s/AKfycbze042bgfxsbzZostLY-TUf5R5FUa2KRdpPDIKI98blhmzcKDi7rdeMOR9pKN8Z2W1vdg/exec";
+      var search = window.location.search;
+      var hash = window.location.hash;
+      if (search || hash) {
+        var sep = baseUrl.indexOf('?') >= 0 ? '&' : '?';
+        var cleanSearch = search ? search.substring(1) : '';
+        frame.src = baseUrl + (cleanSearch ? sep + cleanSearch : '') + hash;
+      }
+    })();
+  </script>
 </body>
 </html>
